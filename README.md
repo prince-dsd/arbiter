@@ -1,4 +1,4 @@
-# Project Title
+# Raven
 
 Raven is a webapp desinged with sentiment analysis to predict and assess sentiments associated with reviews
 
@@ -28,9 +28,8 @@ pip list
 
 
 ## Deployment
-
-Add additional notes about how to deploy this on a live system
-
+Follow the instructions to deploy on heroku
+You can check the webapp [here] (https://sudocorvus.herokuapp.com/)
 ## Built With
 
 * [Flask](https://pypi.org/project/Flask/) - The web framework used
