@@ -1,0 +1,116 @@
+{% extends "layout.html" %}
+{% block content %}
+
+
+
+<div class="container hide-on-small-only">
+  <div class="row  card overview">
+    <div class="col s3 ">
+
+      <img class="responsive-img " src="https://image.tmdb.org/t/p/w500/{{moviePost.poster_path}}">
+      <a class="btn-floating halfway-fab center waves-effect waves-light overview">{{movieRate.rating}}</a>
+
+    </div>
+
+    <div class="col s9 white-text">
+      <h3 class="">{{moviePost['title']}}</h3>
+      <p>{{moviePost["overview"]}}</p>
+
+    </div>
+
+
+
+
+  </div>
+
+</div>
+
+
+
+
+<div class="container">
+
+    <div class="row show-on-small hide-on-med-and-up">
+        <div class="card-image  show-on-small hide-on-med-and-up">
+            <img class="responsive-img" src="https://image.tmdb.org/t/p/w500/{{moviePost.poster_path}}">
+
+
+        </div>
+
+      </div>
+
+  <div class="row  show-on-small hide-on-med-and-up">
+    <div class="card overview">
+      <div class="card-content white-text">
+        <span class="card-title">Overview</span>
+        <a class="btn-floating halfway-fab  center waves-effect waves-light red">{{movieRate.rating}}</a>
+        <p>{{moviePost["overview"]}}</p>
+
+      </div>
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="card review-gradient">
+      <div class="card-content white-text">
+        <span class="card-title"> 
+          <a class="white-text" href="{{url_for('login', movie_id = moviePost['id'])}}">Post a
+            review</a></span>
+        {% if current_user.is_authenticated %}
+
+
+        <form method="POST" action="">
+          {{ form.hidden_tag() }}
+
+
+
+          <div class="input-field">
+            {{ form.title(class="validate white-text") }}
+
+            <label class="active white-text" for="title">Title</label>
+          </div>
+          <div class="input-field">
+            {{form.content(class="materialize-textarea white-text")}}
+            <label class="active white-text" for="textarea">Review</label>
+          </div>
+          {{ form.submit(class="btn btn-large waves-effect overview") }}
+
+
+        </form>
+        {% endif %}
+      </div>
+
+    </div>
+  </div>
+
+
+
+
+  <div class="row ">
+    <div class="card overview">
+      <div class="card-content white-text overview">
+        <span class="card-title">Reviews</span>
+        
+        
+          {% for post in post%}
+        <h6> {{post.title}}</h6> 
+            <p>{{post.content}} <br>
+
+            </p>
+        
+    
+          {% endfor %}
+       
+      </div>
+      <div class="card-action">
+        <a href="#"> </a>
+        <a href="#"></a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+{% endblock content %}

@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class=" slider-gradient ">
+        <div class="row">
+        <div class="carousel col s12  " id="demo-carousel">
+          {% for page in range(5) %}
+                {% for movie in json_data[page]["results"] %}
+            <a class="carousel-item z-depth-5" href="{{ url_for('post', post_id=movie.id) }}"><img src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}"></a>
+                {% endfor %}
+            {% endfor %}
+            
+          </div>
+        </div>
+      </div>
+
+    
+
+ <div class = "container"> 
+
+  
+  <div class="row hide-on-small-and-down">
+        {% for i in range(8) %}
+    <div class="col s3 fill hoverable ">
+        <a class="" href="{{ url_for('post', post_id=json_data[2]['results'][i].id) }}"><img class="responsive-img" src="https://image.tmdb.org/t/p/w500/{{json_data[2]['results'][i].poster_path}}"></a>
+      
+    </div>
+    
+   {% endfor %}
+  </div>
+  
+
+  <div class="row show-on-small hide-on-med-and-up ">
+        {% for i in range(6) %}
+        <div class="col s12  ">
+            <a class="" href="{{ url_for('post', post_id=json_data[3]['results'][i].id) }}">
+                <img class="responsive-img " src="https://image.tmdb.org/t/p/w500/{{json_data[3]['results'][i].poster_path}}">
+            </a>
+          
+        </div>
+        {% endfor %}
+        
+       
+      </div>
+
+  </div> 
+     
+
+      {% endblock content %}

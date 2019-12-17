@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="container" style="margin-bottom:13%; margin-top:5%">
+        <div class="card-panel">
+                <form method="POST">
+                        {{ form.hidden_tag() }}
+                            <legend >Log In</legend>
+                            <div class="input-field">
+                                    <i class="material-icons prefix">email</i>
+            
+                               
+                                <label class="active" for="email">Email</label>
+            
+                                {% if form.email.errors %}
+                                    {{ form.email() }}
+                                    
+                                    <div class="invalid-feedback">
+                                        {% for error in form.email.errors %}
+                                            <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form.email() }}
+                                {% endif %}
+                            </div>
+                            <div class="input-field">
+                                    <i class="material-icons prefix">lock</i>
+            
+                                {{ form.password.label() }}
+                                <label class="active" for="password">Password</label>
+            
+                                {% if form.password.errors %}
+                                    {{ form.password() }}
+                                    <div class="invalid-feedback">
+                                        {% for error in form.password.errors %}
+                                            <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form.password() }}
+                                {% endif %}
+                            </div>
+                          
+                       
+                        <div class="input-field">
+                            {{ form.submit(class ="btn btn-large") }}
+                        </div>
+                       
+                    </form>
+                    <small class="text-muted">
+                            <h4> Need An Account? <a class="ml-2" href="{{ url_for('register') }}"><button class="btn btn-large red darken-3 white-text">SIGN UP NOW</button>
+                            </a></h4>
+                         </small>
+        </div>
+      
+    </div>
+      
+   
+{% endblock content %}

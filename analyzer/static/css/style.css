@@ -1,0 +1,108 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+body{
+  background-image: linear-gradient(to right, #051937, #00466e, #007aa0, #00b2c7, #12ebe1);
+}
+nav ul a,
+nav .brand-logo {
+  color: white;
+}
+
+p {
+  line-height: 2rem;
+}
+
+.sidenav-trigger {
+  color: #26a69a;
+}
+
+
+@media only screen and (max-width : 992px) {
+  .parallax-container .section {
+    position: absolute;
+    top: 40%;
+  }
+  #index-banner .section {
+    top: 10%;
+  }
+}
+
+@media only screen and (max-width : 600px) {
+  #index-banner .section {
+    top: 0;
+  }
+}
+
+
+footer.page-footer {
+  margin: 0;
+}
+
+.thumbnail{
+  width: 267px;
+  height: 400px;
+  
+}
+.card-thumbnail{
+  margin-left: 2%;
+}
+.post-image{
+  width: 200px;
+  height: 200px;
+  margin: 4px;
+}
+.movie-desc{
+  height: 300px;
+  
+}
+textarea{
+  height: 380px;
+  margin-bottom: 4%;
+}
+#homeImage{
+  max-height: 100%;
+  
+}
+.descr{
+  border: none;
+}
+.fill {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden
+}
+.fill img {
+  flex-shrink: 0;
+  min-width: 100%;
+  min-height: 100%
+}
+
+.home-right-image{
+  height: 300px;
+}
+.nav-gradient{
+  background-image: linear-gradient(to right, #051937, #00466e, #007aa0, #00b2c7, #12ebe1);
+}
+.sidenav-gradient{
+  background-color:#2e89a5
+
+}
+.slider-gradient{
+  background-image: linear-gradient(to right, #051937, #00466e, #007aa0, #00b2c7, #12ebe1);
+}
+.footer-gradient{
+  background-image: linear-gradient(to right, #051937, #00466e, #007aa0, #00b2c7, #12ebe1);
+}
+.overview{
+background-color: #007aa0;
+}
+.review-gradient{
+  background-color: #1c95b9;
+
+}

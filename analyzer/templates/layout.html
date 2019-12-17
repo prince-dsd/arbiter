@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  {% if title %}
+  <title>Raven - {{ title }}</title>
+{% else %}
+  <title>Raven</title>
+{% endif %}
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="/static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="/static/css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+</head>
+
+<body>
+ 
+ <div class="navbar-fixed">
+   
+  <nav>
+    <div class="nav-wrapper nav-gradient">
+      <a href="{{url_for('home')}}" class="brand-logo">Raven</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="{{url_for('home')}}">Home</a></li>
+        <li><a href="{{url_for('toprated')}}">Top Rated</a></li>
+        {% if current_user.is_authenticated%}
+        <li><a href="{{url_for('logout')}}">Logout</a></li>
+        <li><a href="{{url_for('account')}}">Account</a></li>
+        {% else %}
+        <li><a href="{{url_for('login')}}">Login</a></li>
+        <li><a href="{{url_for('register')}}">Sign UP</a></li>
+        {% endif %}
+      </ul>
+    </div>
+</nav>
+ </div>
+      
+        <ul class="sidenav sidenav-gradient " id="mobile-demo">
+          <li><a class = " white-text"href="{{url_for('home')}}">Home</a></li>
+          <li><a class = " white-text" href="{{url_for('toprated')}}">Top Rated</a></li>
+          {% if current_user.is_authenticated%}
+          <li><a class = " white-text" href="{{url_for('login')}}">Logout</a></li>
+          <li><a class = " white-text" href="{{url_for('account')}}">Account</a></li>
+          {% else %}
+          <li><a class = " white-text" href="{{url_for('login')}}">Login</a></li>
+          <li><a class = " white-text" href="{{url_for('register')}}">Sign UP</a></li>
+          {% endif %}
+        </ul>
+
+    
+
+
+
+
+
+  {% block content %}{% endblock %}
+
+   
+
+ 
+ 
+
+
+  
+  
+  
+
+  
+
+  
+
+
+  
+
+<footer class="footer-gradient page-footer black lighten-3 z-depth-3" style="margin-bottom: 0px;">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Raven</h5>
+          <p class="grey-text text-lighten-4">This tool is designed to assess and predict the reviews associated with the movie and judge the relevant sentiment</p>
+
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Settings</h5>
+          <ul>
+          
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul>
+            
+
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright z-depth-5">
+      <div class="container">
+        Made by <a class="white-text " href="">sudo-corvus</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="/static/js/jquery-3.4.1.min.js"></script>
+  <script src="/static/js/materialize.js"></script>
+  <script src="/static/js/init.js"></script>
+  <script>
+   $(document).ready(function(){
+      $('#demo-carousel').carousel();
+    });
+  </script>
+  <script>
+      $(document).ready(function(){
+            $('#demo-carousel').carousel();
+          });
+      </script>
+      <script>
+       $(document).ready(function(){
+        $('.sidenav').sidenav();
+      });</script>
+     
+
+          
+    
+
+</body>
+
+</html>

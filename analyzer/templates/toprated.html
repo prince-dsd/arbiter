@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container ">
+  {% for i in range(bulk_data|length) %}
+
+  <div class="row card overview hide-on-small-and-down">
+    <div class="col s3 ">
+
+      <a href="{{ url_for('post', post_id=bulk_data[i].id) }}">
+        <img class="responsive-img " src="https://image.tmdb.org/t/p/w500/{{bulk_data[i].poster_path}}">
+
+      </a>
+      <a class="btn-floating halfway-fab center waves-effect waves-light overview">{{movieSort[i].rating}}</a>
+
+    </div>
+
+    <div class="col s9 white-text">
+      <h4 class="white-text"> {{bulk_data[i].title}}</h4>
+      <p>{{bulk_data[i].overview}}</p>
+
+    </div>
+
+
+
+
+  </div>
+
+  <div class="card-image show-on-small hide-on-med-and-up">
+    <a href="{{ url_for('post', post_id=bulk_data[i].id) }}"><img class="responsive-img"
+        src="https://image.tmdb.org/t/p/w500/{{bulk_data[i].poster_path}}"></a>
+
+  </div>
+  <div class="card show-on-small hide-on-med-and-up ">
+    <div class="card-content">
+      <h4><a href="{{ url_for('post', post_id=bulk_data[i].id) }}" class="grey-text">{{bulk_data[i].title}}</a></h4>
+      </li>
+      <p>{{bulk_data[i].overview}}</p>
+
+
+
+      <a class="btn-floating halfway-fab center waves-effect waves-light red">{{movieSort[i].rating}}</a>
+    </div>
+
+  </div>
+  {% endfor %}
+
+
+</div>
+{% endblock content%}
