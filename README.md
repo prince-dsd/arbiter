@@ -33,7 +33,7 @@ You can check the webapp [here] (https://sudocorvus.herokuapp.com/)
 ## Built With
 
 * [Flask](https://pypi.org/project/Flask/) - The web framework used
-* [sqlite3](https://maven.apache.org/) - Dependency Management
+* [sqlite3](https://maven.apache.org/) -  light database
 
 
 
