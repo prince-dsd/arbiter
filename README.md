@@ -17,6 +17,7 @@ git clone git@github.com:sudo-corvus/raven.git
 ### Installing
 cd to the directory where requirements.txt is located.
 activate your virtualenv.
+Do get the TMDB API key
 ```
 pip install -r requirements.txt in your shell
 ```
