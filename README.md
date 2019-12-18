@@ -1,6 +1,6 @@
 # [Arbiter](https://sudocorvus.herokuapp.com/)
 
-Raven is a webapp desinged with sentiment analysis to predict and assess sentiments associated with reviews
+It is a webapp desinged with sentiment analysis to predict and assess sentiments associated with reviews
 
 ## Getting Started
 
