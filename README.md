@@ -1,6 +1,6 @@
 # [Arbiter](https://sudocorvus.herokuapp.com/)
 
-It is a webapp desinged with sentiment analysis to predict and assess sentiments associated with reviews
+Arbiter is a webapp designed with the help of sentiment analysis to predict ratings of movies through assessment of reviews provided by users.
 
 ## Getting Started
 
@@ -42,7 +42,7 @@ You can check the webapp [here](https://sudocorvus.herokuapp.com/)
 
 ## Authors
 
-* **sudo-corvus** - *Initial work* -
+* **sudo-corvus**
 
 
 ## License
